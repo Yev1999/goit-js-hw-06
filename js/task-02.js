@@ -7,13 +7,17 @@ const ingredients = [
   'Condiments',
 ];
 
+
 function addElements() {
+  let children = [];
   ingredients.map(ingradient => {
     const liElement = document.createElement("li");
     liElement.innerText = `${ingradient}`;
     liElement.classList.add("item");
-    const list = document.querySelector('#ingredients');
-    list.appendChild(liElement);
+    
+    children.push(liElement);
   })
+    const list = document.querySelector('#ingredients');
+    list.append(...children);
 }
 addElements();
